@@ -1,55 +1,58 @@
-<?php include 'helper/title.php'; ?>
-<?php include 'helper/header.php'; ?>
+<?php include "helper/header.php"; ?>
+   <!-- Start main-content -->
+   <div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg1.jpg">
+      <div class="container pt-60 pb-60">
+        <!-- Section Content -->
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <h2 class="title text-white">Media</h2>
+              <ol class="breadcrumb text-center text-black mt-10">
+                <li><a href="index">Home</a></li>
+             
+                <li class="active text-white">Download Audio</li>
+              </ol>
 
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/bg1.jpg)">
-    	<div class="auto-container">
-        	<h2>Download Audios</h2>
-            <ul class="page-breadcrumb">
-            	<li><a href="index">home</a></li>
-                <li>Download Audios</li>
-            </ul>
+            </div>
+            <div class="col-md-6 col-lg-6 col-6 mt-3">
+            <div class="mt-2 text-center">
+                    <a href="" class="btn btn-danger btn-sm">Connect to Mixlr Radio</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-6 mt-3">
+            <div class="mt-5 text-center">
+                    <a href="" class="btn btn-primary btn-sm">Connect to Youtube Live.</a>
+                </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!--End Page Title-->
-	
-	<!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
-    	<div class="auto-container">
-        	<div class="row clearfix">
-            	
-                <!--Content Side / Blog Classic -->
-                <div class="content-side col-xl-9 col-lg-8 col-md-12 col-sm-12">
-                	<div style="padding: 20px;" class="card blog-single padding-right">
-						<div style="padding: 20px;" class="card">
-                        <h3 style="color: #0000fb;" >Power of Worship</h3>
-                            <audio  controls>
-                                <source src="audio.mp3" type="audio/mp3">
-                            </audio>
-                            <div class="mt-2">
-                                <a href="" class="btn btn-danger btn-lg">Download</a>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-top: 40px;">
-                            <!--Styled Pagination-->
-                            <ul class="styled-pagination text-center ">
-                                <li><a href="#" class="active">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
-                            </ul>                
-                            <!--End Styled Pagination-->
-                        </div>
-                    </div>
-				</div>
-				
-				<!--Sidebar Side-->
-				<div class="sidebar-side col-xl-3 col-lg-4 col-md-12 col-sm-12">
-					<?php include 'helper/sidebar.php'; ?>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	
-	<?php include 'helper/footer.php'; ?>
+
+    <!-- Section: Blog -->
+    <section>
+      <div class="container mt-30 mb-30 pt-30 pb-30">
+        <div class="row">
+          <div class="col-md-8">   
+          <div style="padding: 10px; box-shadow: 2px 3px 2px navy;">
+            <h3 style="color: #0000fb;" >Power of Worship</h3>
+                <audio style="width:90%;"  controls>
+                    <source src="audio.mp3" type="audio/mp3">
+                </audio>
+                <div class="mt-2">
+                    <a href="" class="btn btn-danger btn-lg">Download</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <?php include "helper/sidebar.php"; ?>
+          </div>
+        </div>
+      </div>
+    </section> 
+  </div>  
+  <!-- end main-content -->
+
+  <?php include "helper/footer.php"; ?>

@@ -1,96 +1,132 @@
-<?php include 'helper/title.php'; ?>
-<?php include 'helper/header.php'; ?>
+<?php include "helper/header.php"; ?>
+  
+  <!-- Start main-content -->
+  <div class="main-content bg-lighter">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="images/bg1.jpg">
+      <div class="container pt-70 pb-20">
+        <!-- Section Content -->
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title text-white text-center">Contact Us</h2>
+              <ol class="breadcrumb text-left text-black mt-10">
+                <li><a href="index">Home</a></li>
 
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/bg1.jpg)">
-    	<div class="auto-container">
-        	<h2>Contact Us</h2>
-            <ul class="page-breadcrumb">
-            	<li><a href="index">home</a></li>
-                <li>Contact Us</li>
-            </ul>
+                <li class="active text-gray-silver">Contact Us</li>
+              </ol>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-    <!--End Page Title-->
-	
-	<!-- Contact Form Section -->
-	<section class="contact-form-section" style="background-image:url(images/bg1.jpg); background-size:cover; ">
-		<div style="padding: 20px;" class=" auto-container">
-		<div class="card" style="padding:20px;">
-			<!-- Sec Title -->
-			<div class="sec-title">
-				<h2>Get In Touch</h2>
-				<div class="text">Do you have anything in your mind to let us know?  Kindly drop your message.</div>
-			</div>
-			
-			<div class="row clearfix">
-				
-				<!-- Form Column -->
-				<div class="form-column col-lg-7 col-md-12 col-sm-12">
-					<div  class=" inner-column">
-						
-						<!-- Contact Form -->
-						<div class="contact-form">
-								
-							<!--Contact Form-->
-							<form method="post" action="" id="contact-form">
-								<div class="row clearfix">
-									<div class="form-group col-lg-6 col-md-6 col-sm-12">
-										<input type="text" name="username" placeholder="Your name" required>
-									</div>
-									
-									<div class="form-group col-lg-6 col-md-6 col-sm-12">
-										<input type="text" name="email" placeholder="Email address" required>
-									</div>
-									
-									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<input type="text" name="subject" placeholder="Subject" required>
-									</div>
-									
-									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									
-									<div class="form-group col-lg-12 col-md-12 col-sm-12">
-										<button class="theme-btn btn-style-one contact-btn" type="submit" name="submit-form"><span class="txt">Submit now</span></button>
-									</div>
-								</div>
-							</form>
-						</div>
-						
-					</div>
-				</div>
-				<style type="text/css">
-					.contact-btn:hover{
-						color: #0000fb !important;
-						border: 1px solid #0000fb !important;
-					}
-				</style>
-				<!-- Info Column -->
-				<div class="info-column col-lg-5 col-md-12 col-sm-12">
-					<div class="inner-column">
-						
-						<!-- Contact Info List -->
-						<ul class="contact-info-list">
-							<li><strong>Address :</strong><br>Plot 3, Oda road along superb, Akure, Ondo state, Nigeria, West Africa.</li>
-						</ul>
-						<!-- Contact Info List -->
-						<ul class="contact-info-list">
-							<li><strong>Phone : </strong><a href="tel:+2347036736964">+2347036736964</a></li>
-							<li><strong>Email : </strong><a href="mailto:shiningstar@gmail.com">shiningstar@gmail.com</a></li>
-						</ul>
-						<!-- Contact Info List -->
-						<
-						
-					</div>
-				</div>
-				
-			</div>
-				</div>
-		</div>
-	</section>
-	<!-- End Contact Form Section -->
-	
-	
-	
-	<?php include 'helper/footer.php'; ?>
+
+    <!-- Divider: Contact -->
+    <section class="divider">
+      <div class="container">
+        <div class="row pt-30">
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-map-2 text-theme-colored"></i></a>
+                  <div class="media-body"> <strong>Address</strong>
+                    <p>#405, Lan Streen, Los Vegas, USA</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-12">
+                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-call text-theme-colored"></i></a>
+                  <div class="media-body"> <strong>Phone Number</strong>
+                    <p>+325 12345 65478</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-12">
+                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-mail text-theme-colored"></i></a>
+                  <div class="media-body"> <strong>E-MAIL</strong>
+                    <p>supporte@yourdomin.com</p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3 class="line-bottom mt-0 mb-20">Get In Touch</h3>
+           
+            <!-- Contact Form -->
+            <form id="contact_form" name="contact_form" class="" action="#" method="post">
+
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                  </div>
+                </div>
+              </div>
+                
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+                <button type="reset" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">Reset</button>
+              </div>
+            </form>
+
+            <!-- Contact Form Validation-->
+            <script type="text/javascript">
+              $("#contact_form").validate({
+                submitHandler: function(form) {
+                  var form_btn = $(form).find('button[type="submit"]');
+                  var form_result_div = '#form-result';
+                  $(form_result_div).remove();
+                  form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                  var form_btn_old_msg = form_btn.html();
+                  form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                  $(form).ajaxSubmit({
+                    dataType:  'json',
+                    success: function(data) {
+                      if( data.status == 'true' ) {
+                        $(form).find('.form-control').val('');
+                      }
+                      form_btn.prop('disabled', false).html(form_btn_old_msg);
+                      $(form_result_div).html(data.message).fadeIn('slow');
+                      setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                    }
+                  });
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+      </div>
+    </section>
+  </div>
+  <!-- end main-content -->
+  
+<?php include "helper/footer.php"; ?>
+  

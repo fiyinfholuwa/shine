@@ -70,7 +70,7 @@
   <!-- preloader -->
   <div id="preloader">
     <div id="spinner">
-      <img alt="" src="images/preloaders/5.gif">
+      <img alt="" src="images/preloaders/2.gif">
     </div>
     
   </div>
@@ -88,11 +88,9 @@
             <ul class="menuzord-menu onepage-nav">
               <li class="active"><a href="index">Home</a></li>
             
-              <li><a href="enroll.">Enroll</a></li>
+              <li><a href="enroll">Enroll</a></li>
               <li><a href="about">About Us</a></li>
               <li><a href="contact">Contact Us</a></li>
-              
-              
             </ul>
           </nav>
         </div>

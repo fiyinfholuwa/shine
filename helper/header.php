@@ -1,92 +1,100 @@
-<body>
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
 
-<div class="page-wrapper">
-    <!-- Preloader -->
-    <div class="preloader"></div>
+<!-- index-sp-layout309:19-->
+<head>
 
-    <header class="main-header header-style-one">
-        <!--Header Top-->
-        <div class="header-top">
-            <div class="auto-container clearfix">
-                <div class="top-left clearfix">
-                    <div class="text"><span class="icon flaticon-call-answer"></span>Our call center: <a href="tel:+2347036736964" class="number">+2347036736964</a></div>
-					
-                </div>
-                <div class="top-right clearfix">
-                    <!-- Info List -->
-					<ul class="info-list">
-                        <li><a href="contact">Get In Touch</a></li>
-                        <li><a href="download">Download Resources</a></li>
-						
-                    </ul>
-                </div>
-            </div>
+<!-- Meta Tags -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+
+<!-- Page Title -->
+<title>Shining star Chirstian Fellowship</title>
+
+<!-- Favicon and Touch Icons -->
+<link href="images/logo.jpg" rel="shortcut icon" type="image/png">
+
+
+
+<!-- Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="css/css-plugin-collections.css" rel="stylesheet"/>
+<!-- CSS | menuzord megamenu skins -->
+<link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet"/>
+<!-- CSS | Main style file -->
+<link href="css/style-main.css" rel="stylesheet" type="text/css">
+<!-- CSS | Preloader Styles -->
+<link href="css/preloader.css" rel="stylesheet" type="text/css">
+<!-- CSS | Custom Margin Padding Collection -->
+<link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+<!-- CSS | Responsive media queries -->
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+<!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+
+<!-- Revolution Slider 5.x CSS settings -->
+<link  href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
+<link  href="js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css"/>
+<link  href="js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css"/>
+
+<!-- CSS | Theme Color -->
+<link href="css/colors/theme-skin-color-set-1.css" rel="stylesheet" type="text/css">
+
+<!-- external javascripts -->
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- JS | jquery plugin collection for this theme -->
+<script src="js/jquery-plugin-collection.js"></script>
+
+<!-- Revolution Slider 5.x SCRIPTS -->
+<script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+<script src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="">
+<div id="wrapper" class="clearfix">
+  <!-- preloader -->
+  <div id="preloader">
+    <div id="spinner">
+      <img alt="" src="images/preloaders/2.gif">
+    </div>
+    
+  </div>
+  
+  <!-- Header -->
+  <header id="header" class="header">
+  
+    <div class="header-nav">
+      <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+        <div class="container">
+          <nav id="menuzord-right" class="menuzord default">
+            <a class="menuzord-brand pull-left flip" href="javascript:void(0)">
+              <img src="images/logo.jpg" alt="">
+            </a>
+            <ul class="menuzord-menu onepage-nav">
+              <li class="active"><a href="index">Home</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="team">Team</a></li>
+              <li><a href="academy/">Academy</a></li>
+              <li><a href="download">Download</a></li>
+              <li><a href="media">Media</a></li>
+              <li><a href="about">About Us</a></li>
+              <li><a href="contact">Contact Us</a></li>
+            </ul>
+          </nav>
         </div>
-        <!-- End Header Top -->
-
-        <!-- Header Upper -->
-        <div class="header-upper">
-            <div class="inner-container">
-                <div class="auto-container clearfix">
-                    <!--Info-->
-                    <div class="logo-outer">
-                        <div class="logo"><a href="index"><img height="20px" width="60px" src="images/logo.jpg" alt="" title=""></a></div>
-                    </div>
-
-                    <!--Nav Box-->
-                    <div class="nav-outer clearfix">
-                        <!--Mobile Navigation Toggler For Mobile--><div class="mobile-nav-toggler"><span class="icon flaticon-menu-1"></span></div>
-                        <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="navbar-header">
-                                <!-- Togg le Button -->      
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="icon flaticon-menu-1"></span>
-                                </button>
-                            </div>
-                            
-                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="index">Home</a></li>
-                                    <li class="dropdown"><a href="download">Download</a></li>
-                                    <li class="dropdown"><a href="blog">Blog</a></li>
-								
-                                     <li class="dropdown"><a href="team">team</a>
-                                        
-                                    </li>
-                                    <li class="dropdown"><a href="media">media</a></li>
-                                    <li class="dropdown"><a href="about">About</a></li>
-									
-									
-                                    <li><a href="contact">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                        <!-- Main Menu End-->
-					
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--End Header Upper-->
-
-    	<!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><span class="icon flaticon-cancel"></span></div>
-            
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index"><img height="20px" width="60px" src="images/logo.jpg" alt="" title=""></a></div>
-                <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
-				<!--Social Links-->
-				<div class="social-links">
-					<ul class="clearfix">
-						<li><a href="#"><span class="fab fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-						
-					</ul>
-                </div>
-            </nav>
-        </div><!-- End Mobile Menu -->
-
-    </header>
-    <!-- End Main Header -->
+      </div>
+    </div>
+  </header>
