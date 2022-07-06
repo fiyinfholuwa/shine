@@ -2,7 +2,7 @@
   <!-- Start main-content -->
   <div class="main-content">
     <!-- Section: home -->
-    <section id="home" class="divider parallax layer-overlay overlay-dark-9" data-bg-img="images/3.jpg">
+    <section id="home" class="divider parallax layer-overlay overlay-dark-3" data-bg-img="images/3.jpg">
       <div class="display-table">
         <div class="display-table-cell">
           <div class="container">
@@ -10,9 +10,9 @@
               <div class="col-md-6 col-md-push-3">
                 
                 <div class="bg-lightest border-1px p-30 mb-0">
-                  <h3 class="text-theme-colored mt-0 pt-5"> Apply Now</h3>
+                  <h3 class="text-theme-colored mt-0 pt-5">Enrollment Form</h3>
                   <hr>
-                  <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                  
                   <form id="job_apply_form" name="job_apply_form" action="#" method="post" enctype="multipart/form-data">
                     <div class="row">
                       <div class="col-sm-6">
@@ -25,6 +25,30 @@
                         <div class="form-group">
                           <label>Email <small>*</small></label>
                           <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Date of Birth<small>*</small></label>
+                          <input name="form_name" type="date" placeholder="Date Of Birth" required="" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Location/Address<small>*</small></label>
+                          <input name="form_email" class="form-control required email" type="text" placeholder="Location/Address">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Occupation<small>*</small></label>
+                          <input name="form_name" type="text" placeholder="Occupation" required="" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Telephone<small>*</small></label>
+                          <input name="form_email" class="form-control required email" type="number" placeholder="Phone Number">
                         </div>
                       </div>
                     </div>
@@ -40,24 +64,37 @@
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label>Job Post <small>*</small></label>
+                          <label>Are you Born Again<small>*</small></label>
                           <select name="form_post" class="form-control required">
-                            <option value="Finance Manager">Finance Manager</option>
-                            <option value="Area Manager">Area Manager</option>
-                            <option value="Country Manager">Country Manager</option>
+                            <option value="Finance Manager">Yes</option>
+                            <option value="Area Manager">No</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>Have you done Water Baptism by immersion<small>*</small></label>
+                          <select name="form_post" class="form-control required">
+                            <option value="Finance Manager">Yes</option>
+                            <option value="Area Manager">No</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label>How do you get to know about us<small>*</small></label>
+                          <select name="form_post" class="form-control required">
+                            <option value="Finance Manager">Friend</option>
+                            <option value="Area Manager">Social Media</option>
                           </select>
                         </div>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>Message <small>*</small></label>
-                      <textarea name="form_message" class="form-control required" rows="5" placeholder="Your cover letter/message sent to the employer"></textarea>
+                      <label>What do you like about our services</label> <small>*</small></label>
+                      <textarea name="form_message" class="form-control required" rows="5" placeholder="What do you like about our services"></textarea>
                     </div>
-                    <div class="form-group">
-                      <label>C/V Upload</label>
-                      <input name="form_attachment" class="file" type="file" multiple data-show-upload="false" data-show-caption="true">
-                      <small>Maximum upload file size: 12 MB</small>
-                    </div>
+                  
                     <div class="form-group">
                       <input name="form_botcheck" class="form-control" type="hidden" value="" />
                       <button type="submit" class="btn btn-block btn-dark btn-theme-colored btn-sm mt-20 pt-10 pb-10" data-loading-text="Please wait...">Apply Now</button>
@@ -96,7 +133,13 @@
     </section> 
   </div>  
   <!-- end main-content -->
-
+<style>
+    small{
+        color: red;
+        font-weight: 700;
+        font-size: 20px;
+    }
+</style>
   <!-- Footer -->
   <footer id="footer" class="footer bg-black-222">
     
