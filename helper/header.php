@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+<?php 
+require_once "classes/flashMessage.php";
+require_once "classes/Database.php";
+require_once "classes/Post.php";
+require_once "classes/Category.php";
+require_once "classes/Audios.php";
+require_once "classes/Download.php";
+require_once "classes/Award.php";
+require_once "classes/Team.php";
+require_once "classes/Contact.php";
 
+?>
 <!-- index-sp-layout309:19-->
 <head>
 
@@ -51,6 +62,7 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- JS | jquery plugin collection for this theme -->
 <script src="js/jquery-plugin-collection.js"></script>
+<link rel="stylesheet" href="adminpanel/assets/css/toastr.min.css">
 
 <!-- Revolution Slider 5.x SCRIPTS -->
 <script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>

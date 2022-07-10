@@ -30,6 +30,31 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script> 
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+<script src="adminpanel/assets/js/toastr.min.js"></script>
+<script>
+    <?php if(isset($_SESSION['success'])): ?>
+      toastr.options = {
+  "closeButton": true,
+
+  "progressBar": true,
+  
+  "preventDuplicates": false,
+  "showDuration": "1000",
+  "hideDuration": "1000",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+      toastr.success("<?= Flash('success'); ?>");
+    <?php endif ?>
+    <?php if(isset($_SESSION['error']) ): ?>
+      toastr.error("<?= Flash('error'); ?>");
+
+    <?php endif ?>
+  </script>
 </body>
 
 <!-- index-home-variation-maximageslider-style115:19-->

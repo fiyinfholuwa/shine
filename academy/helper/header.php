@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
+<?php 
+require_once "../classes/flashMessage.php";
+require_once "../classes/Database.php";
+require_once "../classes/Post.php";
+require_once "../classes/Category.php";
+require_once "../classes/Audios.php";
+require_once "../classes/Download.php";
+require_once "../classes/Award.php";
+require_once "../classes/Team.php";
+require_once "../classes/Contact.php";
+?>
 <!-- index-sp-layout309:19-->
 <head>
 
@@ -57,6 +67,7 @@
 <!-- Revolution Slider 5.x SCRIPTS -->
 <script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
 <script src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+<link rel="stylesheet" href="../adminpanel/assets/css/toastr.min.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

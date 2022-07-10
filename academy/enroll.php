@@ -12,92 +12,68 @@
                 <div class="bg-lightest border-1px p-30 mb-0">
                   <h3 class="text-theme-colored mt-0 pt-5">Enrollment Form</h3>
                   <hr>
-                  
-                  <form id="job_apply_form" name="job_apply_form" action="#" method="post" enctype="multipart/form-data">
+                  <?php 
+                $contact = new ContactUs();
+
+                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send_msg'])) {
+                    
+                    $full_name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $phone = $_POST['phone'];
+                    $address = $_POST['address'];
+                    $nationality = $_POST['nationality'];
+                    $state = $_POST['state'];
+                    
+
+                    $insertContact = $contact->InsertEnroll($full_name, $email, $phone, $address, $nationality, $state);
+                }
+
+                ?>
+                  <form  name="job_apply_form" action="#" method="post" enctype="multipart/form-data">
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label>Name <small>*</small></label>
-                          <input name="form_name" type="text" placeholder="Enter Name" required="" class="form-control">
+                          <label>Full Name <small>*</small></label>
+                          <input name="name" type="text" placeholder="Enter Name" required="" class="form-control">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label>Email <small>*</small></label>
-                          <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                          <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label>Date of Birth<small>*</small></label>
-                          <input name="form_name" type="date" placeholder="Date Of Birth" required="" class="form-control">
+                          <label>Phone Number<small>*</small></label>
+                          <input name="phone" type="text" placeholder="Phone Number" required="" class="form-control">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label>Location/Address<small>*</small></label>
-                          <input name="form_email" class="form-control required email" type="text" placeholder="Location/Address">
+                          <input name="address" class="form-control required " type="text" placeholder="Location/Address">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label>Occupation<small>*</small></label>
-                          <input name="form_name" type="text" placeholder="Occupation" required="" class="form-control">
+                          <label>Nationality<small>*</small></label>
+                          <input name="nationality" type="text" placeholder="Nationality" required="" class="form-control">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <label>Telephone<small>*</small></label>
-                          <input name="form_email" class="form-control required email" type="number" placeholder="Phone Number">
+                          <label>State<small>*</small></label>
+                          <input name="state" class="form-control required email" type="text" placeholder="State">
                         </div>
                       </div>
                     </div>
-                    <div class="row">               
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Sex <small>*</small></label>
-                          <select name="form_sex" class="form-control required">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Are you Born Again<small>*</small></label>
-                          <select name="form_post" class="form-control required">
-                            <option value="Finance Manager">Yes</option>
-                            <option value="Area Manager">No</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Have you done Water Baptism by immersion<small>*</small></label>
-                          <select name="form_post" class="form-control required">
-                            <option value="Finance Manager">Yes</option>
-                            <option value="Area Manager">No</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>How do you get to know about us<small>*</small></label>
-                          <select name="form_post" class="form-control required">
-                            <option value="Finance Manager">Friend</option>
-                            <option value="Area Manager">Social Media</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label>What do you like about our services</label> <small>*</small></label>
-                      <textarea name="form_message" class="form-control required" rows="5" placeholder="What do you like about our services"></textarea>
-                    </div>
+                    
+                    
                   
                     <div class="form-group">
                       <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                      <button type="submit" class="btn btn-block btn-dark btn-theme-colored btn-sm mt-20 pt-10 pb-10" data-loading-text="Please wait...">Apply Now</button>
+                      <button type="submit" name="send_msg" class="btn btn-block btn-dark btn-theme-colored btn-sm mt-20 pt-10 pb-10" >Apply Now</button>
                     </div>
                   </form>
                   <!-- Job Form Validation-->
@@ -151,7 +127,31 @@
 <!-- Footer Scripts -->
 <!-- JS | Custom script for all pages -->
 <script src="js/custom.js"></script>
+<script src="../adminpanel/assets/js/toastr.min.js"></script>
+<script>
+    <?php if(isset($_SESSION['success'])): ?>
+      toastr.options = {
+  "closeButton": true,
 
+  "progressBar": true,
+  
+  "preventDuplicates": false,
+  "showDuration": "1000",
+  "hideDuration": "1000",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+      toastr.success("<?= Flash('success'); ?>");
+    <?php endif ?>
+    <?php if(isset($_SESSION['error']) ): ?>
+      toastr.error("<?= Flash('error'); ?>");
+
+    <?php endif ?>
+  </script>
 </body>
 
 <!-- form-job-apply-style217:17-->

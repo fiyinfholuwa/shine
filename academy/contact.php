@@ -50,45 +50,55 @@
           </div>
           <div class="col-md-7">
             <h4 class="mt-0 mb-30 line-bottom">Get In Touch</h4>
+            <?php 
+                $contact = new ContactUs();
+
+                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send_msg'])) {
+                    
+                    $full_name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $phone = $_POST['phone'];
+                    $message = $_POST['message'];
+                    
+
+                    $insertContact = $contact->InsertContact($full_name, $email, $phone, $message);
+                }
+
+                ?>
             <!-- Contact Form -->
-            <form id="contact_form" name="contact_form" class="" action="#" method="post">
+            <form  name="contact_form" class="" action="#" method="post">
 
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label for="form_name">Name <small>*</small></label>
-                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                    <input name="name" class="form-control" type="text" placeholder="Enter Name" required="">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label>Email <small>*</small></label>
-                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                    <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
                   </div>
                 </div>
               </div>                
               <div class="row">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="form_name">Subject <small>*</small></label>
-                    <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
-                  </div>
-                </div>
-                <div class="col-sm-6">
+                
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label for="form_phone">Phone</label>
-                    <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                    <input name="phone" class="form-control" type="text" placeholder="Enter Phone" required>
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="form_name">Message</label>
-                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+                <textarea name="message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
               </div>
               <div class="form-group">
                 <input name="form_botcheck" class="form-control" type="hidden" value="" />
-                <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+                <button type="submit" name="send_msg" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" >Send your message</button>
                 
               </div>
             </form>
