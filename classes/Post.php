@@ -81,6 +81,27 @@ class Posts extends Database{
        
     }
 
+    public function getAllPostHome($table_name, $offset, $record_per_page, $table_id){
+        $query = "SELECT * FROM $table_name ORDER BY $table_id  DESC LIMIT $offset, $record_per_page";
+        $result= $this->db->select($query);
+        return $result;
+       
+    }
+
+    public function getAllPostCategoryHome($cat_id, $offset, $record_per_page){
+        $query = "SELECT * FROM post_tbl WHERE post_category = '$cat_id' ORDER BY post_id  DESC LIMIT $offset, $record_per_page";
+        $result= $this->db->select($query);
+        return $result;
+       
+    }
+
+    public function getAllPostSearchHome($search, $offset, $record_per_page){
+        $query = "SELECT * FROM post_tbl WHERE post_title LIKE '%$search%' ORDER BY post_id  DESC LIMIT $offset, $record_per_page";
+        $result= $this->db->select($query);
+        return $result;
+       
+    }
+
 // Delete Posts
 public function delPostById($id){
 

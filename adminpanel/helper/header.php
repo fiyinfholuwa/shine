@@ -26,6 +26,15 @@ function myLoader($className) {
 
  ?>
 
+<?php
+session_start();
+if(!isset($_SESSION['admin_id']) )
+{
+ echo "<script>window.open('../adminlogin','_self')</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

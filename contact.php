@@ -30,21 +30,21 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-map-2 text-theme-colored"></i></a>
                   <div class="media-body"> <strong>Address</strong>
-                    <p>#405, Lan Streen, Los Vegas, USA</p>
+                    <p>Plot 3, Oda road along superb, Akure, Ondo state, Nigeria, West Africa.</p>
                   </div>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-call text-theme-colored"></i></a>
                   <div class="media-body"> <strong>Phone Number</strong>
-                    <p>+325 12345 65478</p>
+                    <p>+2347036736964</p>
                   </div>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-mail text-theme-colored"></i></a>
                   <div class="media-body"> <strong>E-MAIL</strong>
-                    <p>supporte@yourdomin.com</p>
+                    <p>Shiningstar@gmail.com</p>
                   </div>
                 </div>
               </div>

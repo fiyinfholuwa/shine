@@ -370,14 +370,14 @@
         <div class="row equal-height">
           <div class="col-sm-6 col-md-6 pull-right xs-pull-none bg-theme-colored wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
             <div class="pt-60 pb-40 pl-90 pr-160 p-md-30">
-              <h2 class="title text-white text-uppercase line-bottom mt-0 mb-30">Our Mission</h2>
+              <h2 class="title text-white text-uppercase line-bottom mt-0 mb-30">Why You Should Choose Us</h2>
               <div class="icon-box clearfix m-0 p-0 pb-10">
                 <a href="#" class="icon icon-circled bg-white icon-lg pull-left flip sm-pull-none"> 
                   <i class="fa fa-desktop text-theme-color-2 font-36"></i> 
                 </a>
                 <div class="ml-120 ml-sm-0">
-                  <h4 class="icon-box-title text-white mt-5 mb-10 letter-space-1">Best Lab For All</h4>
-                  <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p>
+                  <h4 class="icon-box-title text-white mt-5 mb-10 letter-space-1">Students have access to fast internet connection for research and information</h4>
+                  <!-- <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p> -->
                 </div>
               </div>
               <div class="icon-box clearfix m-0 p-0 pb-10">
@@ -385,8 +385,8 @@
                   <i class="fa fa-user text-theme-color-2 font-36"></i> 
                 </a>
                 <div class="ml-120 ml-sm-0">
-                  <h4 class="icon-box-title text-white mt-5 mb-10 letter-space-1">World Best Teacher</h4>
-                  <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p>
+                  <h4 class="icon-box-title text-white mt-5 mb-10 letter-space-1">Qualified Teachers and Efficient Management system</h4>
+                  <!-- <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p> -->
                 </div>
               </div>
               <div class="icon-box clearfix m-0 p-0 pb-10">
@@ -394,8 +394,8 @@
                   <i class="fa fa-money text-theme-color-2 font-36"></i> 
                 </a>
                 <div class="ml-120 ml-sm-0">
-                  <h4 class="icon-box-title text-white mt-5 mb-10 letter-space-1">Low Cost Services</h4>
-                  <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p>
+                  <h4 class="icon-box-title text-white mt-5 mb-10 letter-space-1">Very affordable and of Good quality</h4>
+                  <!-- <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p> -->
                 </div>
               </div>
             </div>
@@ -416,17 +416,23 @@
             <div class="col-md-5 wow fadeInRight pr-40" data-wow-duration="1s" data-wow-delay="0.3s">
               <h3 class="text-uppercase title line-bottom">What <span class="text-theme-color-2 font-weight-700">Clients Say ?</span></h3>
               <div class="bxslider bx-nav-top">
+              <?php
+              
+                    $test = new Testimony();
+                    $gettest = $test->getTestimonyHome();
+                    if ($gettest) {
+                        while ($result = $gettest->fetch_assoc()) { ?>
                 <div class="testimonial bg-theme-colored border-radius-10px p-20 mb-15">
                   <div class="comment">
-                   <p class="text-white"><em>Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui.</em></p>
+                   <p class="text-white"><em><?= $result['content']; ?></em></p>
                   </div>
                   <div class="content mt-20">
                     <div class="thumb pull-left flip">
-                      <img width="64" src="images/testimonials/1.jpg" alt="" class="img-circle">
+                      <img width="64" src="../adminpanel/<?= $result['test_image']; ?>" alt="" class="img-circle">
                     </div>
                     <div class="testimonials-details pull-left flip ml-20">
-                      <h5 class="author text-theme-color-2 mt-0 mb-0 font-weight-600">Jonathan Smith</h5>
-                      <h6 class="title font-14 m-0 mt-5 mb-5 text-gray-darkgray">cici inc.</h6>
+                      <h5 class="author text-theme-color-2 mt-0 mb-0 font-weight-600"><?= $result['full_name']; ?></h5>
+                      <h6 class="title font-14 m-0 mt-5 mb-5 text-gray-darkgray"><?= $result['role'] ?></h6>
                       <ul class="review_text list-inline">
                         <li>
                           <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">4.50</span></div>
@@ -436,100 +442,40 @@
                     <div class="clearfix"></div>
                   </div>
                 </div>
-                <div class="testimonial bg-theme-colored border-radius-10px p-20 mb-15">
-                  <div class="comment">
-                   <p class="text-white"><em>Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui.</em></p>
-                  </div>
-                  <div class="content mt-20">
-                    <div class="thumb pull-left flip">
-                      <img width="64" src="images/testimonials/2.jpg" alt="" class="img-circle">
-                    </div>
-                    <div class="testimonials-details pull-left flip ml-20">
-                      <h5 class="author text-theme-color-2 mt-0 mb-0 font-weight-600">Jonathan Smith</h5>
-                      <h6 class="title font-14 m-0 mt-5 mb-5 text-gray-darkgray">cici inc.</h6>
-                      <ul class="review_text list-inline">
-                        <li>
-                          <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">4.50</span></div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-                <div class="testimonial bg-theme-colored border-radius-10px p-20 mb-15">
-                  <div class="comment">
-                   <p class="text-white"><em>Lorem ipsum dolor sit ametconse ctetur adipisicing elitvolup tatem error sit qui.</em></p>
-                  </div>
-                  <div class="content mt-20">
-                    <div class="thumb pull-left flip">
-                      <img width="64" src="images/testimonials/3.jpg" alt="" class="img-circle">
-                    </div>
-                    <div class="testimonials-details pull-left flip ml-20">
-                      <h5 class="author text-theme-color-2 mt-0 mb-0 font-weight-600">Jonathan Smith</h5>
-                      <h6 class="title font-14 m-0 mt-5 mb-5 text-gray-darkgray">cici inc.</h6>
-                      <ul class="review_text list-inline">
-                        <li>
-                          <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">4.50</span></div>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
+                <?php }}else{?>
+      <div class="text-center" style="color: red;height: 300px;">No Testimonial Yet.</div>
+    <?php } ?>
+                
               </div>
             </div>
             <div class="col-md-7 hidden-xs pl-40">
               <h3 class="line-bottom mt-20 line-height-1"><span class="text-theme-color-2">FAQ</span></h3>
               <div id="accordion1" class="panel-group accordion">
                 <div class="panel">
-                  <div class="panel-title"> <a class="active" data-parent="#accordion1" data-toggle="collapse" href="#accordion11" aria-expanded="true"> <span class="open-sub"></span> Why this Company is Best?</a> </div>
+                  <div class="panel-title"> <a class="active" data-parent="#accordion1" data-toggle="collapse" href="#accordion11" aria-expanded="true"> <span class="open-sub"></span>What should I do if I am worried about my child's progress?</a> </div>
                   <div id="accordion11" class="panel-collapse collapse in" role="tablist" aria-expanded="true">
                     <div class="panel-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore impedit quae repellendus provident dolor iure poss imusven am aliquam. Officiis totam ea laborum deser unt vonsess.  iure poss imusven am aliquam</p>
+                      <p>If you have any  concerns about your child's progress we ask that you arrange an appointment to talk to your child's class teacher.</p>
                     </div>
                   </div>
                 </div>
                 <div class="panel">
-                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion12" class="" aria-expanded="true"> <span class="open-sub"></span> Why this Company is Best?</a> </div>
+                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion12" class="" aria-expanded="true"> <span class="open-sub"></span>What do I do if I need to see a teacher?</a> </div>
                   <div id="accordion12" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                     <div class="panel-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore impedit quae repellendus provident dolor iure poss imusven am aliquam. Officiis totam ea laborum deser unt vonsess.  iure poss imusven am aliquam</p>
+                      <p>An appointment can be made via the school office.</p>
                     </div>
                   </div>
                 </div>
                 <div class="panel">
-                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion13" class="" aria-expanded="true"> <span class="open-sub"></span> Why this Company is Best?</a> </div>
+                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion13" class="" aria-expanded="true"> <span class="open-sub"></span>How will I be informed if there is an enforced school closure?</a> </div>
                   <div id="accordion13" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                     <div class="panel-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore impedit quae repellendus provident dolor iure poss imusven am aliquam. Officiis totam ea laborum deser unt vonsess.  iure poss imusven am aliquam</p>
+                      <p>On the very rare occasion that the school needs to close we will inform all parents via text. Information will also be shared via text message.</p>
                     </div>
                   </div>
                 </div>
-                <div class="panel">
-                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion14" class="" aria-expanded="true"> <span class="open-sub"></span> Why this Company is Best?</a> </div>
-                  <div id="accordion14" class="panel-collapse collapse" role="tablist" aria-expanded="true">
-                    <div class="panel-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore impedit quae repellendus provident dolor iure poss imusven am aliquam. Officiis totam ea laborum deser unt vonsess.  iure poss imusven am aliquam</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion15" class="" aria-expanded="true"> <span class="open-sub"></span> Why this Company is Best?</a> </div>
-                  <div id="accordion15" class="panel-collapse collapse" role="tablist" aria-expanded="true">
-                    <div class="panel-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore impedit quae repellendus provident dolor iure poss imusven am aliquam. Officiis totam ea laborum deser unt vonsess.  iure poss imusven am aliquam</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-title"> <a data-parent="#accordion1" data-toggle="collapse" href="#accordion16" class="" aria-expanded="true"> <span class="open-sub"></span> Why this Company is Best?</a> </div>
-                  <div id="accordion16" class="panel-collapse collapse" role="tablist" aria-expanded="true">
-                    <div class="panel-content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore impedit quae repellendus provident dolor iure poss imusven am aliquam. Officiis totam ea laborum deser unt vonsess.  iure poss imusven am aliquam</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                
             </div>
           </div>
         </div>

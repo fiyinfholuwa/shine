@@ -38,145 +38,66 @@
             <div class="col-md-6 wow mt-20 fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
               <h3 class="text-uppercase title line-bottom mt-0 mb-30">What people <span class="text-theme-color-2">say about us</span></h3>
               <div class="owl-carousel-2col">
+              <?php
+              
+              $test = new Testimony();
+              $gettest = $test->getTestimonyHome();
+              if ($gettest) {
+                  while ($result = $gettest->fetch_assoc()) { ?>
                 <div class="item">
                   <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                     <div class="team-thumb">
-                      <img class="img-fullwidth" alt="" src="images/team/lg2.jpg">
+                      <img class="img-fullwidth" alt="" src="../adminpanel/<?= $result['test_image']; ?>">
                       <div class="team-overlay"></div>
                     </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
-                    <h4 class="text-uppercase font-weight-600 m-5"><a href="page-teachers-details.html">Jhon Smith</a></h4>
-                      <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Teacher Designation</h6>
+                    <h4 class="text-uppercase font-weight-600 m-5"><?= $result['full_name']; ?></h4>
+                      <h6 class="text-theme-colored font-15 font-weight-400 mt-0"><?= $result['content']; ?></h6>
                       <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <p><?= $result['role']; ?></p>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
-                    <div class="team-thumb">
-                      <img class="img-fullwidth" alt="" src="images/team/lg3.jpg">
-                      <div class="team-overlay"></div>
-                    </div>
-                  <div class="team-details bg-silver-light pt-10 pb-10">
-                    <h4 class="text-uppercase font-weight-600 m-5"><a href="page-teachers-details.html">Jhon Smith</a></h4>
-                      <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Teacher Designation</h6>
-                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
-                    <div class="team-thumb">
-                      <img class="img-fullwidth" alt="" src="images/team/lg4.jpg">
-                      <div class="team-overlay"></div>
-                    </div>
-                  <div class="team-details bg-silver-light pt-10 pb-10">
-                    <h4 class="text-uppercase font-weight-600 m-5"><a href="page-teachers-details.html">Jhon Smith</a></h4>
-                      <h6 class="text-theme-colored font-15 font-weight-400 mt-0">Teacher Designation</h6>
-                      <ul class="styled-icons icon-theme-colored icon-dark icon-circled icon-sm">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <?php }}else{?>
+      <div class="text-center" style="color: red;height: 300px;">No Testimonial Yet.</div>
+    <?php } ?>
+              
               </div>
             </div>
             <div class="col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
               <h3 class="text-uppercase ml-15 title line-bottom">Our <span class="text-theme-color-2 font-weight-700">Awards</span></h3>
               <div class="bxslider bx-nav-top p-0 m-0">
+              <?php
+              
+              $award = new Award();
+              $getaward = $award->getAward('award_tbl', 'award_id');
+              if ($getaward) {
+                  while ($result = $getaward->fetch_assoc()) { ?>  
                 <div class="col-xs-12 pr-0 col-sm-6 col-md-6 mb-20">
                   <div class="pricing table-horizontal maxwidth400">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as1.jpg" alt="">
+                        <img class="img-fullwidth mb-sm-0" src="../adminpanel/<?= $result['award_image']; ?>" alt="">
                         </div>
                       </div>
                       <div class="col-md-6 p-10 pl-sm-50">
-                        <h4 class="mt-0 mb-5 mt-10"><a href="#" class="text-white">Upcoming Event Title</a></h4>
+                        <h4 class="mt-0 mb-5 mt-10"><?= $result['award_title']; ?></h4>
                         <ul class="list-inline font-16 mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
+                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i><?= $result['award_date']; ?></li>
+                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i><?= $result['award_org']; ?></li>
                         </ul>
-                        <p class="mb-0 font-13 text-white mr-5 pr-10">Lorem ipsum dolor sit amet, conse ctetur adipisicing elit. Quas eveniet.</p>
-                        <a class="font-16  text-white mt-20" href="#">Read More →</a>
+                        <!-- <p class="mb-0 font-13 text-white mr-5 pr-10">Lorem ipsum dolor sit amet, conse ctetur adipisicing elit. Quas eveniet.</p -->
+                        <!-- <a class="font-16  text-white mt-20" href="#">Read More →</a> -->
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-12 pr-0 col-sm-6 col-md-6 mb-30">
-                  <div class="pricing table-horizontal maxwidth400">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as2.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-6 p-10 pl-sm-50">
-                        <h4 class="mt-0 mb-5 mt-10"><a href="#" class="text-white">Upcoming Event Title</a></h4>
-                        <ul class="list-inline font-16 mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
-                        </ul>
-                        <p class="mb-0 font-13 text-white mr-5 pr-10">Lorem ipsum dolor sit amet, conse ctetur adipisicing elit. Quas eveniet.</p>
-                        <a class="font-16  text-white mt-20" href="#">Read More →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12 pr-0 col-sm-6 col-md-6 mb-30">
-                  <div class="pricing table-horizontal maxwidth400">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as3.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-6 p-10 pl-sm-50">
-                        <h4 class="mt-0 mb-5 mt-10"><a href="#" class="text-white">Upcoming Event Title</a></h4>
-                        <ul class="list-inline font-16 mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
-                        </ul>
-                        <p class="mb-0 font-13 text-white mr-5 pr-10">Lorem ipsum dolor sit amet, conse ctetur adipisicing elit. Quas eveniet.</p>
-                        <a class="font-16  text-white mt-20" href="#">Read More →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12 pr-0 col-sm-6 col-md-6 mb-30">
-                  <div class="pricing table-horizontal maxwidth400">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as4.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-6 p-10 pl-sm-50">
-                        <h4 class="mt-0 mb-5 mt-10"><a href="#" class="text-white">Upcoming Event Title</a></h4>
-                        <ul class="list-inline font-16 mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
-                        </ul>
-                        <p class="mb-0 font-13 text-white mr-5 pr-10">Lorem ipsum dolor sit amet, conse ctetur adipisicing elit. Quas eveniet.</p>
-                        <a class="font-16  text-white mt-20" href="#">Read More →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <?php } }else {?>
+                <div class="text-center" style="color: red;height: 300px;">No Award yet.</div>
+              <?php } ?>
+                
               </div>
             </div>
           </div>

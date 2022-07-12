@@ -13,14 +13,14 @@
             <div class="contact-info text-center pt-60 pb-60 border-right">
               <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
               <h4>Call Us</h4>
-              <h6 class="text-gray">Phone: +262 695 2601</h6>
+              <h6 class="text-gray">Phone: 07036736994</h6>
             </div>
           </div>
           <div class="col-sm-12 col-md-4">
             <div class="contact-info text-center  pt-60 pb-60 border-right">
               <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
               <h4>Address</h4>
-              <h6 class="text-gray">121 King Street, Australia</h6>
+              <h6 class="text-gray">First campus @ Akure, Ondo state</h6>
             </div>
           </div>
           <div class="col-sm-12 col-md-4">
@@ -32,21 +32,14 @@
           </div>
         </div>
         <div class="row pt-10">
-          <div class="col-md-5">
+          <div style="overflow: hidden;" class="col-md-5">
           <h4 class="mt-0 mb-30 line-bottom">Find Our Location</h4>
           <!-- Google Map HTML Codes -->
-          <div>
-            <!-- put iframe here -->
-          </div>
-          <div class="map-popupstring hidden" id="popupstring1">
-            <div class="text-center">
-              <h3>CharityFund Office</h3>
-              <p>121 King Street, Melbourne Victoria 3000 Australia</p>
-            </div>
-          </div>
-          <!-- Google Map Javascript Codes -->
-          <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWE4mHmR9GyPsHSOVZrSCOOljk8DU9B4"></script>
-          <script src="js/google-map-init.js"></script>
+          
+          <div style="" class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=First%20campus%20@%20Akure,%20Ondo%20state&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+        
+          
+          
           </div>
           <div class="col-md-7">
             <h4 class="mt-0 mb-30 line-bottom">Get In Touch</h4>

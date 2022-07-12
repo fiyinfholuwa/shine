@@ -64,6 +64,12 @@ class Download extends Database{
        
     }
 
+    public function getAllPdfHome($table_name, $offset, $record_per_page, $table_id){
+        $query = "SELECT * FROM $table_name ORDER BY $table_id  DESC LIMIT $offset, $record_per_page";
+        $result= $this->db->select($query);
+        return $result;
+       
+    }
 // Delete Team Testimonial
 public function delPdfById($id){
 

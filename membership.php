@@ -159,7 +159,15 @@
 </style>
   <!-- Footer -->
   <footer id="footer" class="footer bg-black-222">
-    
+    <div class="container pt-10 pb-10">
+      <div class="row">
+       
+      <p style="margin-top: 30px; text-align:center;">Copyright &copy; - Shining star family fellowship</p>
+
+				
+					<p style="font-size: 8px; text-align: center; color: grey;">Developed by: DaraTech, 08097238712</p>
+      </div>
+    </div>
   </footer>
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 </div>

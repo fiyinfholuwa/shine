@@ -10,6 +10,7 @@ require_once "../classes/Download.php";
 require_once "../classes/Award.php";
 require_once "../classes/Team.php";
 require_once "../classes/Contact.php";
+require_once "../classes/Testimony.php";
 ?>
 <!-- index-sp-layout309:19-->
 <head>

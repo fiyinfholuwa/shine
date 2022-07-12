@@ -9,11 +9,11 @@
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2 class="title text-white">Blog</h2>
+              <h2 class="title text-white">Search for: <?php echo $_GET['search']; ?></h2>
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="index">Home</a></li>
                
-                <li class="active text-white">Latest Posts</li>
+                <li class="active text-white">Search : <?php echo $_GET['search']; ?></li>
               </ol>
             </div>
           </div>
@@ -30,6 +30,8 @@
             <!-- Blog Masonry -->
             <div id="grid" class="gallery-isotope grid-2 masonry gutter-30 clearfix">
             <?php
+            if(isset($_GET['search'])){  
+            $search = $_GET['search'];
               if (isset($_GET['page'])) {
               $page_num = $_GET['page'];
                   }else{
@@ -40,8 +42,10 @@
             $no_of_record_per_page = 6;
             $offset = ($page_num - 1 ) * $no_of_record_per_page;
                     $blog = new Posts();
-                    $getPost = $blog->getAllPostHome('post_tbl', $offset, $no_of_record_per_page, 'post_id');
-                    if ($getPost) {
+                    $getPost = $blog->getAllPostSearchHome($search, $offset, $no_of_record_per_page);
+                    if (!$getPost) {
+                        echo '<div class="text-center" style="color: red;height: 400px;">No Post found.</div>';
+                    }else{ 
                         while ($result = $getPost->fetch_assoc()) { ?>
               <!-- Blog Item Start -->
               <div class="gallery-item">
@@ -74,9 +78,8 @@
                 </article>
               </div>
               <!-- Blog Item End -->
-              <?php }}else{?>
-              <div class="text-center" style="color: red;height: 400px;">No Post yet.</div>
-            <?php } ?>
+              <?php  } } }  ?>
+              
 
             </div>
             <!-- Blog Masonry -->
@@ -87,34 +90,32 @@
             <nav>
             <nav>
               <?php 
-                $query = "select * from post_tbl";
+                $query = "select * from post_tbl where post_title like '%$search%'";
                 $run_query = mysqli_query($conn, $query);
                 $total_pager = mysqli_num_rows($run_query);
                 if ($total_pager> $no_of_record_per_page) { ?>
-                  <ul class="pagination">
+                   <ul class="pagination">
+           
+                <?php   $prev = $page_num - 1;   ?>
+<li><a class="page-numbers  "  href="<?php if($page_num <=1) { echo '#!';}else{ echo 'search?search='. $_GET['search'] .'&page='. $prev .'';} ?> " aria-label="Previous"><span aria-hidden="true">&#xAB;</a></li>
+
+            <?php
 
             
-                <li><a class="page-numbers  "  href="<?php if($page_num <=1) { echo '#!';}else{ echo '?page='.($page_num - 1);} ?> " aria-label="Previous"><span aria-hidden="true">&#xAB;</a></li>
+            
+            $pagination = new Pagination();
+            $total_pages = $pagination->Paginate('post_tbl', $no_of_record_per_page);
+            
+                for ($i=1; $i <=$total_pages; $i++) { 
+                if ($page_num== $i) {
+                    echo '<li><a class="page-numbers active page-link" href="search?search='.$_GET['search'].'&page='. $i .'">' . $i . '</a></li>';
+                }
                 
-                            <?php
-
-                            
-                            
-                            $pagination = new Pagination();
-                            $total_pages = $pagination->Paginate('post_tbl', $no_of_record_per_page);
-                            
-                                for ($i=1; $i <=$total_pages; $i++) { 
-                                if ($page_num== $i) {
-                                    echo '<li><a class="page-numbers active page-link" href="?page='. $i .'">'. $i . '</a></li>';
-                                }
-                                
-                                }
-                            ?>
-                            <li><a class="page-numbers"  href="<?php if($page_num>=$total_pages) { echo '#!';}else{ echo '?page='.($page_num+ 1);} ?>" aria-label="Next"><span aria-hidden="true">&#xBB;</span></a></li>
-                        </ul>   
-                </nav>
-                
-            </center>
+                }
+            ?>
+            <?php $next = $page_num + 1; ?>
+            <li><a class="page-numbers"  href="<?php if($page_num>=$total_pages) { echo '#!';}else{ echo 'search?search='.$_GET['search'].'&page=' . $next . '';} ?>" aria-label="Next"><span aria-hidden="true">&#xBB;</span></a></li>
+        </ul>   
 
           <?php } ?>
             </nav>

@@ -9,11 +9,23 @@
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2 class="title text-white">Blog</h2>
+              <h2 class="title text-white"><?php
+            if (isset($_GET['id'])) {
+                $query = "select * from category_tbl where cat_id = '$_GET[id]' ";
+             $run_query = mysqli_query($conn, $query);
+             $fetch = mysqli_fetch_assoc($run_query);
+             $cat_id = $fetch['cat_id'];
+
+              
+            } else {
+                echo "<script>window.open('blog','_self')</script>";
+            } ?>
+             
+              Category: <?php echo $fetch['cat_name']; ?></h2>
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="index">Home</a></li>
                
-                <li class="active text-white">Latest Posts</li>
+                <li class="active text-white">Post Category:  <?php echo $fetch['cat_name']; ?></li>
               </ol>
             </div>
           </div>
@@ -40,7 +52,8 @@
             $no_of_record_per_page = 6;
             $offset = ($page_num - 1 ) * $no_of_record_per_page;
                     $blog = new Posts();
-                    $getPost = $blog->getAllPostHome('post_tbl', $offset, $no_of_record_per_page, 'post_id');
+                    $cat_id = $cat_id;
+                    $getPost = $blog->getAllPostCategoryHome($cat_id, $offset, $no_of_record_per_page);
                     if ($getPost) {
                         while ($result = $getPost->fetch_assoc()) { ?>
               <!-- Blog Item Start -->
@@ -74,9 +87,10 @@
                 </article>
               </div>
               <!-- Blog Item End -->
-              <?php }}else{?>
-              <div class="text-center" style="color: red;height: 400px;">No Post yet.</div>
-            <?php } ?>
+             
+              <?php } }else{ ?>
+              <div class="text-center" style="color: red; height: 300px !important;">No Post yet for this category.</div>
+             <?php } ?>
 
             </div>
             <!-- Blog Masonry -->
@@ -87,7 +101,7 @@
             <nav>
             <nav>
               <?php 
-                $query = "select * from post_tbl";
+                $query = "select * from post_tbl where post_category = '$cat_id'";
                 $run_query = mysqli_query($conn, $query);
                 $total_pager = mysqli_num_rows($run_query);
                 if ($total_pager> $no_of_record_per_page) { ?>

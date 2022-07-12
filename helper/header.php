@@ -10,7 +10,11 @@ require_once "classes/Download.php";
 require_once "classes/Award.php";
 require_once "classes/Team.php";
 require_once "classes/Contact.php";
-
+require_once "classes/Pagination.php";
+function UrlConverter($title){
+  $url = str_replace(' ', "_", $title);
+  return $url;
+}
 ?>
 <!-- index-sp-layout309:19-->
 <head>
@@ -45,6 +49,7 @@ require_once "classes/Contact.php";
 <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
 <!-- CSS | Responsive media queries -->
 <link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
 <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
 

@@ -24,26 +24,66 @@
     <section>
       <div class="container mt-30 mb-30 pt-30 pb-30">
         <div class="row">
-          <div class="col-md-8">   
-          <div style="padding: 10px; box-shadow: 2px 3px 2px navy;">
-            <h3 style="color: #0000fb;" >Power of Worship</h3>
+          <div class="col-md-8"> 
+          <?php
+              if (isset($_GET['page'])) {
+              $page_num = $_GET['page'];
+                  }else{
+                      $page_num = 1;
+                  }
+              $i = 0; 
+                  $i++;
+            $no_of_record_per_page = 6;
+            $offset = ($page_num - 1 ) * $no_of_record_per_page;
+                    $pdf = new Download();
+                    $getPdf = $pdf->getAllPdfHome('pdf_tbl', $offset, $no_of_record_per_page, 'pdf_id');
+                    if ($getPdf) {
+                        while ($result = $getPdf->fetch_assoc()) { ?>
+          <div style="padding: 10px; box-shadow: 2px 3px 2px navy; margin-top:20px;">
+            <h3 style="color: #0000fb;" ><?= $result['pdf_title']; ?></h3>
                
                 <div class="mt-2">
-                    <a href="" class="btn btn-danger btn-lg">Download</a>
+                    <a href="adminpanel/<?= $result['uploaded_pdf']; ?>" target="_blank" class="btn btn-danger btn-lg">Download</a>
                 </div>
             </div>
+    <?php }}else{?>
+      <div class="text-center" style="color: red;height: 400px;">No uploaded Pdf resource yet.</div>
+    <?php } ?>
+
             <div style="padding-top:30px;">
             <nav class="">
-              <ul class="pagination xs-pull-center m-0">
-                <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">«</span> </a> </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">...</a></li>
-                <li> <a href="#" aria-label="Next"> <span aria-hidden="true">»</span> </a> </li>
-              </ul>
+            <nav>
+              <?php 
+                $query = "select * from pdf_tbl";
+                $run_query = mysqli_query($conn, $query);
+                $total_pager = mysqli_num_rows($run_query);
+                if ($total_pager> $no_of_record_per_page) { ?>
+                  <ul class="pagination">
+
+            
+                <li><a class="page-numbers  "  href="<?php if($page_num <=1) { echo '#!';}else{ echo '?page='.($page_num - 1);} ?> " aria-label="Previous"><span aria-hidden="true">&#xAB;</a></li>
+                
+                            <?php
+
+                            
+                            
+                            $pagination = new Pagination();
+                            $total_pages = $pagination->Paginate('pdf_tbl', $no_of_record_per_page);
+                            
+                                for ($i=1; $i <=$total_pages; $i++) { 
+                                if ($page_num== $i) {
+                                    echo '<li><a class="page-numbers active page-link" href="?page='. $i .'">'. $i . '</a></li>';
+                                }
+                                
+                                }
+                            ?>
+                            <li><a class="page-numbers"  href="<?php if($page_num>=$total_pages) { echo '#!';}else{ echo '?page='.($page_num+ 1);} ?>" aria-label="Next"><span aria-hidden="true">&#xBB;</span></a></li>
+                        </ul>   
+                </nav>
+                
+            </center>
+
+          <?php } ?>
             </nav>
             </div>
           </div>
